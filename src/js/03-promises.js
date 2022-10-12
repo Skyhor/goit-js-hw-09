@@ -16,7 +16,8 @@ function submitCreatePromise(event) {
       })
       .catch(({ position, delay }) => {
         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-      });
+      })
+      .finally(() => form.reset());
     delay += stepVal;
   }
 }
